@@ -10,6 +10,11 @@ form {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+label {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
 input {
     padding: 10px;
     margin: 10px 0;
@@ -31,4 +36,11 @@ button {
 
 button:hover {
     background-color: #0056b3;
+}
+
+.message {
+    text-align: center;
+    font-size: 14px;
+    color: green;
+    margin-top: 10px;
 }

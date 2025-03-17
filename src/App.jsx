@@ -1,10 +1,11 @@
 import Form from "./components/Form";
+import UserTable from "./components/UserTable";
 
 function App() {
     return (
         <div>
-            <h1>Форма регистрации</h1>
             <Form />
+            <UserTable />
         </div>
     );
 }

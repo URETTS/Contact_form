@@ -7,17 +7,18 @@ dotenv.config(); // Загружаем переменные окружения
 
 const app = express();
 const port = 5001;
-app.listen(port, () => {
-    console.log(`Сервер работает на порту ${port}`);
-});
-
 
 // Подключение к PostgreSQL
 const pool = new pg.Pool({
+    // eslint-disable-next-line no-undef
     user: process.env.DB_USER,       
+    // eslint-disable-next-line no-undef
     host: process.env.DB_HOST,       
+    // eslint-disable-next-line no-undef
     database: process.env.DB_NAME,   
+    // eslint-disable-next-line no-undef
     password: process.env.DB_PASS,   
+    // eslint-disable-next-line no-undef
     port: process.env.DB_PORT,       
 });
 
@@ -48,7 +49,17 @@ app.post("/users", async (req, res) => {
     }
 });
 
+// **Маршрут для получения всех пользователей**
+app.get("/users", async (req, res) => {
+    try {
+        const users = await pool.query("SELECT * FROM users");
+        res.json(users.rows);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
 // Запуск сервера
 app.listen(port, () => {
-    console.log(`Сервер запущен на http://localhost:${port}`);
+    console.log(`Сервер работает на порту http://localhost:${port}`);
 });
