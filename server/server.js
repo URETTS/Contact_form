@@ -10,6 +10,7 @@ const port = 5001;
 
 // Подключение к PostgreSQL
 const pool = new pg.Pool({
+    
     // eslint-disable-next-line no-undef
     user: process.env.DB_USER,       
     // eslint-disable-next-line no-undef

@@ -12,7 +12,7 @@ const UserTable = () => {
     }, []);
 
     return (
-        <div>
+        <>
             <h2>Список пользователей</h2>
             <table>
                 <thead>
@@ -32,7 +32,8 @@ const UserTable = () => {
                     ))}
                 </tbody>
             </table>
-        </div>
+            {/* <button onClick={()=>{setUsers(users.concat(users))}}> UPD</button> */}
+        </>
     );
 };
 
