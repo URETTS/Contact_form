@@ -27,11 +27,11 @@ services:
     image: postgres:15
     restart: always
     environment:
-      POSTGRES_USER: myuser
-      POSTGRES_PASSWORD: mypassword
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1111
       POSTGRES_DB: mydatabase
     ports:
-      - "5433:5432"
+      - "5432:5432"
     networks:
       - app-network
 
